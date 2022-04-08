@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://PreFab/LevelInstance.tscn" type="PackedScene" id=1]
+
+[node name="Level_1" type="Node2D"]
+
+[node name="LevelInstance" parent="." instance=ExtResource( 1 )]
+
+[node name="Plattforms" parent="LevelInstance" index="0"]
+tile_data = PoolIntArray( 65534, 0, 0, 65535, 0, 1, 0, 0, 1, 1, 0, 1, 2, 0, 2, 7, 0, 0, 8, 0, 1, 9, 0, 1, 10, 0, 1, 11, 0, 2 )
+
+[node name="Doctor" parent="LevelInstance" index="1"]
+position = Vector2( 728, 18 )
+
+[node name="CollisionPolygon2D" parent="LevelInstance/HitBox" index="0"]
+polygon = PoolVector2Array( -633, -283, -140, -291, -140, 189, 148, 103, 487, 99, 796, 93, 869, -365, 1045, -360, 1048, 458, -541, 443 )
+
+[node name="Camera2D" parent="LevelInstance" index="3"]
+current = true
+
+[node name="TopLeft" parent="LevelInstance/Camera2D/Limits" index="0"]
+position = Vector2( -646, -381 )
+
+[node name="BottomRigth" parent="LevelInstance/Camera2D/Limits" index="1"]
+position = Vector2( 1198, 505 )
+
+[editable path="LevelInstance"]
+[editable path="LevelInstance/HitBox"]
+[editable path="LevelInstance/Camera2D"]

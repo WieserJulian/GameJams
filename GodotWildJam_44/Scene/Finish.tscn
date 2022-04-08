@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Fonts/Lato.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Fonts/Oswald-SemiBold.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Skript/Finish.cs" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 128
+font_data = ExtResource( 2 )
+
+[node name="Finish" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[node name="Text" type="Label" parent="."]
+margin_right = 1021.0
+margin_bottom = 422.0
+custom_fonts/font = SubResource( 1 )
+text = "Finished"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="time" type="Label" parent="."]
+margin_left = 851.0
+margin_top = 514.0
+margin_right = 1005.0
+margin_bottom = 586.0
+custom_fonts/font = ExtResource( 1 )
+text = "None"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
