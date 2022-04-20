@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://PreFab/LevelInstance.tscn" type="PackedScene" id=1]
+[ext_resource path="res://PreFab/Ladder.tscn" type="PackedScene" id=2]
 
 [node name="Level_1" type="Node2D"]
 
@@ -24,6 +25,15 @@ position = Vector2( -646, -381 )
 [node name="BottomRigth" parent="LevelInstance/Camera2D/Limits" index="1"]
 position = Vector2( 1198, 505 )
 
+[node name="Ladder" parent="." instance=ExtResource( 2 )]
+
+[node name="Ladder" parent="Ladder" index="0"]
+tile_data = PoolIntArray( -327679, 2, 0, -262143, 2, 65536, -196607, 2, 65536, -131071, 2, 65536, -65535, 2, 65536, 1, 2, 131072 )
+
+[node name="LadderPlattform" parent="Ladder" index="1"]
+tile_data = PoolIntArray( -327680, 0, 0, -327678, 1, 0 )
+
 [editable path="LevelInstance"]
 [editable path="LevelInstance/HitBox"]
 [editable path="LevelInstance/Camera2D"]
+[editable path="Ladder"]
